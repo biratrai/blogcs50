@@ -1,3 +1,11 @@
+@section('header-right')
+	<a href="{{ URL::route('newPost') }}" class="btn btn-default btn-lg">
+		<span class="glyphicon glyphicon-pencil"></span>
+	</a>
+@stop
+		
 @section('content')
-  <p>Nothing here... yet!</p>
+  @foreach ($posts as $post)
+  	@include('blog.partials.post',array('post'=> $post))
+  @endforeach
 @stop
